@@ -196,15 +196,15 @@ namespace Xamarin.Forms.Labs.Droid.Services.Contacts
             switch (dataType)
             {
                 case ContactsContract.CommonDataKinds.Nickname.ContentItemType:
-                    contact.CompleteName.NickName = c.GetString(c.GetColumnIndex(ContactsContract.CommonDataKinds.Nickname.Name));
+                    contact.NickName = c.GetString(c.GetColumnIndex(ContactsContract.CommonDataKinds.Nickname.Name));
                     break;
 
                 case StructuredName.ContentItemType:
-                    contact.CompleteName.Prefix = c.GetString(StructuredName.Prefix);
-                    contact.CompleteName.FirstName = c.GetString(StructuredName.GivenName);
-                    contact.CompleteName.MiddleName = c.GetString(StructuredName.MiddleName);
-                    contact.CompleteName.LastName = c.GetString(StructuredName.FamilyName);
-                    contact.CompleteName.Suffix = c.GetString(StructuredName.Suffix);
+                    contact.Prefix = c.GetString(StructuredName.Prefix);
+                    contact.FirstName = c.GetString(StructuredName.GivenName);
+                    contact.MiddleName = c.GetString(StructuredName.MiddleName);
+                    contact.LastName = c.GetString(StructuredName.FamilyName);
+                    contact.Suffix = c.GetString(StructuredName.Suffix);
                     break;
 
                 case ContactsContract.CommonDataKinds.Phone.ContentItemType:
@@ -224,7 +224,7 @@ namespace Xamarin.Forms.Labs.Droid.Services.Contacts
                     break;
 
                 case ContactsContract.CommonDataKinds.GroupMembership.ContentItemType:
-                    //TODO implement other platform specific items
+                    contact.groupMemberships.Add(GetContactGroupMembership(c, resources));
                     break;
 
                 case StructuredPostal.ContentItemType:
@@ -232,8 +232,7 @@ namespace Xamarin.Forms.Labs.Droid.Services.Contacts
                     break;
 
                 case InstantMessaging.ContentItemType:
-                    //TODO implement other platform specific items
-                    //contact.instantMessagingAccounts.Add(GetImAccount(c, resources));
+                    contact.instantMessagingAccounts.Add(GetImAccount(c, resources));
                     break;
 
                 case WebsiteData.ContentItemType:
@@ -241,10 +240,17 @@ namespace Xamarin.Forms.Labs.Droid.Services.Contacts
                     break;
 
                 case Relation.ContentItemType:
-                    //TODO implement other platform specific items
-                    //contact.relationships.Add(GetRelationship(c, resources));
+                    contact.relationships.Add(GetRelationship(c, resources));
                     break;
             }
+        }
+
+        internal static GroupMembership GetContactGroupMembership(ICursor c, Resources resources)
+        {
+            GroupMembership g = new GroupMembership();
+            g.GroupRowId = c.GetInt(c.GetColumnIndex(ContactsContract.CommonDataKinds.GroupMembership.GroupRowId));
+            g.GroupSourceId = c.GetString(c.GetColumnIndex(ContactsContract.CommonDataKinds.GroupMembership.GroupSourceId));
+            return g;
         }
 
         internal  static Note GetNote(ICursor c, Resources resources)
@@ -252,8 +258,7 @@ namespace Xamarin.Forms.Labs.Droid.Services.Contacts
             return new Note { Content = GetString(c, ContactsContract.DataColumns.Data1) };
         }
 
-        //TODO implement other platform specific items
-        /*internal static Relationship GetRelationship(ICursor c, Resources resources)
+        internal static Relationship GetRelationship(ICursor c, Resources resources)
         {
             Relationship r = new Relationship { Name = c.GetString(Relation.Name) };
 
@@ -276,10 +281,8 @@ namespace Xamarin.Forms.Labs.Droid.Services.Contacts
             }
 
             return r;
-        }*/
+        }
 
-        //TODO implement other platform specific items
-        /*
         internal static InstantMessagingAccount GetImAccount(ICursor c, Resources resources)
         {
             InstantMessagingAccount ima = new InstantMessagingAccount();
@@ -290,13 +293,14 @@ namespace Xamarin.Forms.Labs.Droid.Services.Contacts
             //ima.Label = InstantMessaging.GetTypeLabel (resources, imKind, c.GetString (CommonColumns.Label));
 
             IMProtocolDataKind serviceKind = (IMProtocolDataKind)c.GetInt(c.GetColumnIndex(InstantMessaging.Protocol));
-            ima.Service = serviceKind.ToInstantMessagingService();
+            ima.Service = serviceKind.ToInstantMessagingService(); 
+
             ima.ServiceLabel = (serviceKind != IMProtocolDataKind.Custom)
                 ? InstantMessaging.GetProtocolLabel(resources, serviceKind, String.Empty)
                 : c.GetString(InstantMessaging.CustomProtocol);
 
             return ima;
-        }*/
+        }
 
         internal static Address GetAddress(ICursor c, Resources resources)
         {
@@ -359,15 +363,13 @@ namespace Xamarin.Forms.Labs.Droid.Services.Contacts
             return e;
         }
 
-        //TODO implement other platform specific items
-        /*
         internal static GroupMembership GetContactGroupMembership(ICursor c, Resources resources)
         {
             GroupMembership g = new GroupMembership();
             g.GroupRowId = c.GetInt(c.GetColumnIndex(ContactsContract.CommonDataKinds.GroupMembership.GroupRowId));
             g.GroupSourceId = c.GetString(c.GetColumnIndex(ContactsContract.CommonDataKinds.GroupMembership.GroupSourceId));
             return g;
-        }*/
+        }
 
         internal static Xamarin.Forms.Labs.Services.Contacts.Organization GetOrganization(ICursor c, Resources resources)
         {
@@ -471,8 +473,8 @@ namespace Xamarin.Forms.Labs.Droid.Services.Contacts
             }
         }
 
-        //TODO implement other platform specific items
-        /*internal static OrganizationType ToOrganizationType(this OrganizationDataKind organizationKind)
+        //TODO implement platform specific data
+        /* internal static OrganizationType ToOrganizationType(this OrganizationDataKind organizationKind)
         {
             switch (organizationKind)
             {
@@ -484,8 +486,7 @@ namespace Xamarin.Forms.Labs.Droid.Services.Contacts
             }
         }*/
 
-        //TODO implement other platform specific items
-        /*internal static InstantMessagingService ToInstantMessagingService(this IMProtocolDataKind protocolKind)
+        internal static InstantMessagingService ToInstantMessagingService(this IMProtocolDataKind protocolKind)
         {
             switch (protocolKind)
             {
@@ -502,7 +503,7 @@ namespace Xamarin.Forms.Labs.Droid.Services.Contacts
                 default:
                     return InstantMessagingService.Other;
             }
-        }*/
+        }
     }
 }
 

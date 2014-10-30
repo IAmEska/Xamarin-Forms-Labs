@@ -170,6 +170,9 @@
     <Compile Include="Services\Contacts\ContactReader.cs" />
     <Compile Include="Services\Contacts\ProjectionReader.cs" />
     <Compile Include="Services\ContentQuery\MemberExpressionFinder.cs" />
+    <Compile Include="Services\Contacts\GroupMembership.cs" />
+    <Compile Include="Services\Contacts\Relationship.cs" />
+    <Compile Include="Services\Contacts\InstantMessangingAccount.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

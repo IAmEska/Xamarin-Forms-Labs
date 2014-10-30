@@ -248,6 +248,10 @@ namespace Xamarin.Forms.Labs.Droid.Services.Contacts
                     this.mimeType = ContactsContract.CommonDataKinds.StructuredName.ContentItemType;
                     return ContactsContract.Data.ContentUri;
 
+                case "GroupMemberships":
+                    this.mimeType = ContactsContract.CommonDataKinds.GroupMembership.ContentItemType;
+                    return ContactsContract.Data.ContentUri;
+
                 case "Relationships":
                     this.mimeType = ContactsContract.CommonDataKinds.Relation.ContentItemType;
                     return ContactsContract.Data.ContentUri;

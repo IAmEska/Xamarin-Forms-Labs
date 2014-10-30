@@ -132,7 +132,6 @@
     <Compile Include="Controls\AccessoryViewCell.cs" />
     <Compile Include="Controls\CheckboxCell.cs" />
     <Compile Include="Enums\TextCellDetailLocation.cs" />
-    <Compile Include="Services\Contacts\CompleteName.cs" />
     <Compile Include="Services\Contacts\Website.cs" />
     <Compile Include="Services\Contacts\Organization.cs" />
     <Compile Include="Services\Contacts\Note.cs" />

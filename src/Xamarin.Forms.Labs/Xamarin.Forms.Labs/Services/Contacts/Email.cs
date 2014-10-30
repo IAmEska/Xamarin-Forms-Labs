@@ -6,7 +6,7 @@ namespace Xamarin.Forms.Labs.Services.Contacts
     {
         public enum EmailType
         {
-            Personal,
+            Home,
             Work,
             Other
         }

@@ -11,7 +11,17 @@ namespace Xamarin.Forms.Labs.Services.Contacts
 
         string DisplayName{ get; set; }
 
-        CompleteName CompleteName{ get; set; }
+        string Prefix{ get; set; }
+
+        string FirstName{ get; set; }
+
+        string MiddleName{ get; set; }
+
+        string LastName{ get; set; }
+
+        string NickName{ get; set; }
+
+        string Suffix{ get; set; }
 
         IEnumerable<Website> Websites{ get; set; }
 

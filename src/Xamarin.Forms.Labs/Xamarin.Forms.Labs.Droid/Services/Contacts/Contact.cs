@@ -13,6 +13,52 @@ namespace Xamarin.Forms.Labs.Droid.Services.Contacts
 {
     public class Contact : IContact
     {
+        #region platform specific
+
+        internal List<GroupMembership> groupMemberships;
+
+        public IEnumerable<GroupMembership> GroupMemberships
+        {
+            get
+            {
+                return groupMemberships;
+            }
+            set
+            {
+                groupMemberships = new List<GroupMembership>(value);
+            }
+        }
+
+        internal List<InstantMessagingAccount> instantMessagingAccounts;
+
+        public IEnumerable<InstantMessagingAccount> InstantMessagingAccounts
+        {
+            get
+            {
+                return instantMessagingAccounts;
+            }
+            set
+            {
+                instantMessagingAccounts = new List<InstantMessagingAccount>(value);
+            }
+        }
+
+        internal List<Relationship> relationships;
+
+        public IEnumerable<Relationship> Relationships
+        {
+            get
+            {
+                return relationships;
+            }
+            set
+            {
+                relationships = new List<Relationship>(value);
+            }
+        }
+
+        #endregion
+
         #region implemented interface properties
 
         public string Id
@@ -27,11 +73,17 @@ namespace Xamarin.Forms.Labs.Droid.Services.Contacts
             set;
         }
 
-        public CompleteName CompleteName
-        {
-            get;
-            set;
-        }
+        public string Prefix{ get; set; }
+
+        public string FirstName{ get; set; }
+
+        public string MiddleName{ get; set; }
+
+        public string LastName{ get; set; }
+
+        public string NickName{ get; set; }
+
+        public string Suffix{ get; set; }
 
         internal List<Website> websites;
 

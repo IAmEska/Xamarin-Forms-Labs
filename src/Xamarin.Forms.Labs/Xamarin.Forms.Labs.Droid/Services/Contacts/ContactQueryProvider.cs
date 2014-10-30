@@ -31,13 +31,12 @@ namespace Xamarin.Forms.Labs.Droid.Services.Contacts
                 return new GenericQueryReader<Xamarin.Forms.Labs.Services.Contacts.Email>(translator, content, resources, ContactHelper.GetEmail);
             else if (translator.ReturnType == typeof(Address))
                 return new GenericQueryReader<Address>(translator, content, resources, ContactHelper.GetAddress);
-            //TODO implement platform specific contact data
-            /* else if (translator.ReturnType == typeof(Relationship))
-                return new GenericQueryReader<Relationship>(translator, content, resources, ContactHelper.GetRelationship);*/
-            //TODO implement platform specific contact data
-            /*
+            else if (translator.ReturnType == typeof(Relationship))
+                return new GenericQueryReader<Relationship>(translator, content, resources, ContactHelper.GetRelationship);
+            else if (translator.ReturnType == typeof(GroupMembership))
+                return new GenericQueryReader<GroupMembership>(translator, content, resources, ContactHelper.GetContactGroupMembership);
             else if (translator.ReturnType == typeof(InstantMessagingAccount))
-                return new GenericQueryReader<InstantMessagingAccount>(translator, content, resources, ContactHelper.GetImAccount);*/
+                return new GenericQueryReader<InstantMessagingAccount>(translator, content, resources, ContactHelper.GetImAccount);
             else if (translator.ReturnType == typeof(Website))
                 return new GenericQueryReader<Website>(translator, content, resources, ContactHelper.GetWebsite);
             else if (translator.ReturnType == typeof(Organization))
