@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
@@ -34,16 +34,16 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-	<DocumentationFile>..\..\..\..\ReleaseBuild\XLabs.Caching.SQLite.XML</DocumentationFile>
+    <DocumentationFile>..\..\..\..\ReleaseBuild\XLabs.Caching.SQLite.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
     <ProjectReference Include="..\..\Serialization\XLabs.Serialization\XLabs.Serialization.csproj">
-      <Project>{8e7f7522-f018-466a-aa8a-147ee9341ba0}</Project>
+      <Project>{8E7F7522-F018-466A-AA8A-147EE9341BA0}</Project>
       <Name>XLabs.Serialization</Name>
     </ProjectReference>
     <ProjectReference Include="..\XLabs.Caching\XLabs.Caching.csproj">
-      <Project>{8dea9048-3715-4f76-9c7c-390a4256d833}</Project>
+      <Project>{8DEA9048-3715-4F76-9C7C-390A4256D833}</Project>
       <Name>XLabs.Caching</Name>
     </ProjectReference>
   </ItemGroup>

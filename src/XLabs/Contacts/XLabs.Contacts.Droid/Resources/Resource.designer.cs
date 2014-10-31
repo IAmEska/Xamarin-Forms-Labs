@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("XLabs.Platform.Droid.Resource", IsApplication=false)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("XLabs.Contacts.Droid.Resource", IsApplication=false)]
 
-namespace XLabs.Platform.Droid
+namespace XLabs.Contacts.Droid
 {
 	
 	
@@ -40,11 +40,8 @@ namespace XLabs.Platform.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f020001
-			public static int ApplicationName = 2130837505;
-			
 			// aapt resource value: 0x7f020000
-			public static int Hello = 2130837504;
+			public static int library_name = 2130837504;
 			
 			static String()
 			{

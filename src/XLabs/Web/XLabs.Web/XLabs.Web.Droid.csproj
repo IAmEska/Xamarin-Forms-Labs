@@ -59,7 +59,7 @@
       <Name>XLabs.Serialization</Name>
     </ProjectReference>
     <ProjectReference Include="XLabs.Web.csproj">
-      <Project>{d66d0e8a-4350-4f95-90f8-86f2fb1a45a3}</Project>
+      <Project>{D66D0E8A-4350-4F95-90F8-86F2FB1A45A3}</Project>
       <Name>XLabs.Web</Name>
     </ProjectReference>
   </ItemGroup>

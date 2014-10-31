@@ -78,7 +78,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>..\..\..\..\ReleaseBuild\</OutputPath>
-	<DocumentationFile>..\..\..\..\ReleaseBuild\XLabs.Web.WP8.XML</DocumentationFile>
+    <DocumentationFile>..\..\..\..\ReleaseBuild\XLabs.Web.WP8.XML</DocumentationFile>
     <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
