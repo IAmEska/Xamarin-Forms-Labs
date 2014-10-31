@@ -141,9 +141,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XLabs.Web.WP8", "..\XLabs\W
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contacts", "Contacts", "{CDCEC243-E883-4BDB-96AA-D0678C342FC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XLabs.Contacts", "XLabs.Contacts\XLabs.Contacts.csproj", "{A53F18F9-4165-42DB-A1FD-B2C981957A27}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XLabs.Contacts", "..\XLabs\Contacts\XLabs.Contacts\XLabs.Contacts.csproj", "{A53F18F9-4165-42DB-A1FD-B2C981957A27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XLabs.Contacts.Droid", "XLabs.Contacts\XLabs.Contacts.Droid\XLabs.Contacts.Droid.csproj", "{11DE7A3B-6A7A-46E9-BAE2-4EC95BEB760C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XLabs.Contacts.Droid", "..\XLabs\Contacts\XLabs.Contacts.Droid\XLabs.Contacts.Droid.csproj", "{11DE7A3B-6A7A-46E9-BAE2-4EC95BEB760C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
