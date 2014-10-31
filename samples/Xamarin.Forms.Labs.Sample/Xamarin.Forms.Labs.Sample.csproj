@@ -155,6 +155,10 @@
       <DependentUpon>CameraViewPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Controls\SeparatorPage.cs" />
+    <Compile Include="ViewModel\ContactsViewModel.cs" />
+    <Compile Include="Pages\Services\ContactsPage.xaml.cs">
+      <DependentUpon>ContactsPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
@@ -188,6 +192,9 @@
       <LogicalName>ImageGallery.xaml</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Controls\CameraViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Services\ContactsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -234,6 +241,10 @@
     <ProjectReference Include="..\..\src\XLabs\IOC\XLabs.Ioc\XLabs.Ioc.csproj">
       <Project>{2E200799-1170-49BF-A4AA-2A9228F8A213}</Project>
       <Name>XLabs.Ioc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Xamarin.Forms.Labs\XLabs.Contacts\XLabs.Contacts.csproj">
+      <Project>{A53F18F9-4165-42DB-A1FD-B2C981957A27}</Project>
+      <Name>XLabs.Contacts</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

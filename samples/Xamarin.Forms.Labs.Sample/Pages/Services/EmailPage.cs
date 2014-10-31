@@ -6,7 +6,7 @@ using Xamarin.Forms.Labs.Services.Email;
 using Xamarin.Forms.Labs.Services.Media;
 using XLabs.Ioc;
 
-namespace Xamarin.Forms.Labs.Sample.Pages.Services
+namespace Xamarin.Forms.Labs.Sample.Pages
 {
     public class EmailPage : ContentPage
     {
@@ -68,11 +68,11 @@ namespace Xamarin.Forms.Labs.Sample.Pages.Services
                 };
 
                 buttonSendEmail.Clicked += (sender, args) => EmailService.ShowDraft(
-                                    "Test Subject",
-                                    "Test Body",
-                                    true,
-                                    string.Empty,
-                                    Enumerable.Empty<string>());
+                    "Test Subject",
+                    "Test Body",
+                    true,
+                    string.Empty,
+                    Enumerable.Empty<string>());
 
                 buttonSendEmailWithAttachment.Clicked += (sender, args) =>
                 {

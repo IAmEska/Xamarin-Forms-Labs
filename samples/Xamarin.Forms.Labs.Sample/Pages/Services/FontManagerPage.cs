@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms.Labs;
 using Xamarin.Forms.Labs.Services;
 
-namespace Xamarin.Forms.Labs.Sample.Pages.Services
+namespace Xamarin.Forms.Labs.Sample.Pages
 {
     public class FontManagerPage : ContentPage
     {

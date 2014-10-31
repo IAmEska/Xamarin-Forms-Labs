@@ -5,7 +5,7 @@ using Xamarin.Forms.Labs.Controls;
 using Xamarin.Forms.Labs.Mvvm;
 using Xamarin.Forms.Labs.Sample.Pages.Controls;
 using Xamarin.Forms.Labs.Sample.Pages.Controls.Charts;
-using Xamarin.Forms.Labs.Sample.Pages.Services;
+using Xamarin.Forms.Labs.Sample.Pages;
 using Xamarin.Forms.Labs.Services;
 using XLabs.Ioc;
 
@@ -52,6 +52,7 @@ namespace Xamarin.Forms.Labs.Sample
             ViewFactory.Register<SoundPage, SoundServiceViewModel>();
             ViewFactory.Register<RepeaterViewPage, RepeaterViewViewModel>();
             ViewFactory.Register<WaveRecorderPage, WaveRecorderViewModel>();
+            ViewFactory.Register<Pages.Services.ContactsPage,ContactsViewModel>();
 
             var mainTab = new ExtendedTabbedPage()
             {
@@ -96,7 +97,8 @@ namespace Xamarin.Forms.Labs.Sample
             };
             var lstServices = new ListView
             {
-                ItemsSource = new List<string>() {
+                ItemsSource = new List<string>()
+                {
                     "TextToSpeech",
                     "DeviceExtended",
                     "PhoneService",
@@ -110,7 +112,8 @@ namespace Xamarin.Forms.Labs.Sample
                     "FontManager",
                     "NFC",
                     //"WaveRecorder",
-                    "Email"
+                    "Email",
+                    "Contacts"
                 }
             };
 
@@ -145,9 +148,9 @@ namespace Xamarin.Forms.Labs.Sample
                     case "sound":
                         await mainPage.Navigation.PushAsync(ViewFactory.CreatePage<SoundServiceViewModel>());
                         break;
-                    //case "bluetooth":
-                    //    await mainPage.Navigation.PushAsync(new BluetoothPage());
-                    //    break;
+                //case "bluetooth":
+                //    await mainPage.Navigation.PushAsync(new BluetoothPage());
+                //    break;
                     case "fontmanager":
                         await mainPage.Navigation.PushAsync(new FontManagerPage(Resolver.Resolve<IDisplay>()));
                         break;
@@ -159,6 +162,9 @@ namespace Xamarin.Forms.Labs.Sample
                         break;
                     case "email":
                         await mainPage.Navigation.PushAsync(new EmailPage());
+                        break;
+                    case "contacts":
+                        await mainPage.Navigation.PushAsync(ViewFactory.CreatePage<ContactsViewModel>());
                         break;
                 }
             };
@@ -294,7 +300,8 @@ namespace Xamarin.Forms.Labs.Sample
             };
             var lstControls = new ListView
             {
-                ItemsSource = new List<string>() {
+                ItemsSource = new List<string>()
+                {
                     "Bar",
                     "Line",
                     "Combination",
