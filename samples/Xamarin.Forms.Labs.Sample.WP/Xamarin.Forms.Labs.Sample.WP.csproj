@@ -200,6 +200,14 @@
       <Project>{8dea9048-3715-4f76-9c7c-390a4256d833}</Project>
       <Name>XLabs.Caching</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\XLabs\Contacts\XLabs.Contacts.WP8\XLabs.Contacts.WP.csproj">
+      <Project>{e6a13c8c-cf90-4874-85d7-78a180de7d50}</Project>
+      <Name>XLabs.Contacts.WP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\XLabs\Contacts\XLabs.Contacts\XLabs.Contacts.csproj">
+      <Project>{a53f18f9-4165-42db-a1fd-b2c981957a27}</Project>
+      <Name>XLabs.Contacts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\XLabs\IOC\XLabs.Ioc\XLabs.Ioc.csproj">
       <Project>{2e200799-1170-49bf-a4aa-2a9228f8a213}</Project>
       <Name>XLabs.Ioc</Name>

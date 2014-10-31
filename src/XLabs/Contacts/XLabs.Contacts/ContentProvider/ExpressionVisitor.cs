@@ -4,9 +4,9 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace XLabs.Droid.ContentProvider
+namespace XLabs.ContentProvider
 {
-    internal abstract class ExpressionVisitor
+    public abstract class ExpressionVisitor
     {
         public virtual Expression Visit(Expression expression)
         {

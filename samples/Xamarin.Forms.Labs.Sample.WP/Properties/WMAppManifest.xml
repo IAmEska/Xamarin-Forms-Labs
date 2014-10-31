@@ -19,6 +19,7 @@
       <Capability Name="ID_CAP_MAP" />
       <Capability Name="ID_CAP_MEDIALIB_PHOTO" />
       <Capability Name="ID_CAP_MICROPHONE" />
+      <Capability Name="ID_CAP_APPOINTMENTS" />
     </Capabilities>
     <Tasks>
       <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
@@ -53,9 +54,6 @@
     </ScreenResolutions>
     <Requirements>
       <Requirement Name="ID_REQ_REARCAMERA" />
-      <Requirement Name="ID_REQ_GYROSCOPE" />
-      <Requirement Name="ID_REQ_MAGNETOMETER" />
-      <Requirement Name="ID_REQ_NFC" />
     </Requirements>
   </App>
 </Deployment>

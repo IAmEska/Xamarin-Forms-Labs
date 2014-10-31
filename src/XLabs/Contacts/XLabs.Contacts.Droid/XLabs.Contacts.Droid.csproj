@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -14,6 +14,8 @@
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <AssemblyName>XLabs.Contacts.Droid</AssemblyName>
     <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\Xamarin.Forms.Labs\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -69,17 +71,12 @@
     <Compile Include="GroupMembership.cs" />
     <Compile Include="InstantMessangingAccount.cs" />
     <Compile Include="ProjectionReader.cs" />
-    <Compile Include="Relationship.cs" />
     <Compile Include="ContentProvider\ContentQueryProvider.cs" />
     <Compile Include="ContentProvider\ContentQueryTranslator.cs" />
     <Compile Include="ContentProvider\ContentResolverColumnMapping.cs" />
-    <Compile Include="ContentProvider\EvaluationNominator.cs" />
-    <Compile Include="ContentProvider\ExpressionEvaluator.cs" />
-    <Compile Include="ContentProvider\ExpressionVisitor.cs" />
     <Compile Include="ContentProvider\GenericQueryReader.cs" />
     <Compile Include="ContentProvider\ITableFinder.cs" />
     <Compile Include="ContentProvider\MemberExpressionFinder.cs" />
-    <Compile Include="ContentProvider\Query.cs" />
     <Compile Include="Contact.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -97,17 +94,22 @@
       <Name>XLabs.Contacts</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
   <ItemGroup>
     <XamarinComponentReference Include="xamandroidsupportv13-18">
       <Version>20.0.0.4</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
     <XamarinComponentReference Include="xamandroidsupportv4-18">
-      <Version>20.0.0.4</Version>
+      <Version>4.18.1</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ContentProvider\" />
   </ItemGroup>
 </Project>

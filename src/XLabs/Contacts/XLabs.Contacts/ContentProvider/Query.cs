@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace XLabs.Droid.ContentProvider
+namespace XLabs.ContentProvider
 {
-    internal class Query<T>
+    public class Query<T>
         : IOrderedQueryable<T>
     {
         public Query(IQueryProvider provider)

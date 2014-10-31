@@ -37,7 +37,9 @@ namespace XLabs.Contacts
 
         IEnumerable<Address> Addresses{ get; set; }
 
-        // relationships, instantMessagingAccount
+        IEnumerable<Relationship> Relationships { get; set; }
+
+        // instantMessagingAccount
 
         Task<ImageSource> GetThumbnailAsync();
 

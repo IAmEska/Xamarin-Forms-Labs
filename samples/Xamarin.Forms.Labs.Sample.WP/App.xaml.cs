@@ -21,6 +21,8 @@ namespace Xamarin.Forms.Labs.Sample.WP
     using XLabs.Serialization;
     using XLabs.Caching;
     using XLabs.Caching.SQLite;
+    using XLabs.Contacts;
+    using XLabs.Contacts.WP;
 
     public partial class App : Application
     {
@@ -37,6 +39,8 @@ namespace Xamarin.Forms.Labs.Sample.WP
         {
 
             Charting.WP.Controls.ChartRenderer renderer = new Charting.WP.Controls.ChartRenderer();
+            XLabs.Contacts.WP.AddressBook addressBook = new AddressBook();
+            
             // Global handler for uncaught exceptions.
             UnhandledException += Application_UnhandledException;
 

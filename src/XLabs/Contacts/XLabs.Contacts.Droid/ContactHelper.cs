@@ -240,10 +240,9 @@ namespace XLabs.Contacts.Droid
                     contact.websites.Add(GetWebsite(c, resources));
                     break;
 
-            //TODO implement relationships
-            /*case Relation.ContentItemType:
+                case Relation.ContentItemType:
                     contact.relationships.Add(GetRelationship(c, resources));
-                    break;*/
+                    break;
             }
         }
 
@@ -261,8 +260,6 @@ namespace XLabs.Contacts.Droid
             return new Note { Contents = GetString(c, ContactsContract.DataColumns.Data1) };
         }
 
-        //TODO implement relationship
-        /*
         internal static Relationship GetRelationship(ICursor c, Resources resources)
         {
             Relationship r = new Relationship { Name = c.GetString(Relation.Name) };
@@ -286,7 +283,7 @@ namespace XLabs.Contacts.Droid
             }
 
             return r;
-        }*/
+        }
 
         //TODO implement InstantMessaginAccount
         /*

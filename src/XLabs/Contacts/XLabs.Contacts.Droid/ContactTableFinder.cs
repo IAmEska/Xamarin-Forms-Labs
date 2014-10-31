@@ -4,12 +4,13 @@ using System.Linq.Expressions;
 using System.Reflection;
 using Android.Provider;
 using Uri = Android.Net.Uri;
+using XLabs.ContentProvider;
 using XLabs.Droid.ContentProvider;
 
 namespace XLabs.Contacts.Droid
 {
     internal class ContactTableFinder
-        : XLabs.Droid.ContentProvider.ExpressionVisitor, ITableFinder
+        : XLabs.ContentProvider.ExpressionVisitor, ITableFinder
     {
         public bool UseRawContacts
         {

@@ -7,6 +7,7 @@ using Xamarin.Forms.Labs.Sample.Pages.Controls;
 using Xamarin.Forms.Labs.Sample.Pages.Controls.Charts;
 using Xamarin.Forms.Labs.Sample.Pages;
 using Xamarin.Forms.Labs.Services;
+using XLabs.Contacts;
 using XLabs.Ioc;
 
 namespace Xamarin.Forms.Labs.Sample

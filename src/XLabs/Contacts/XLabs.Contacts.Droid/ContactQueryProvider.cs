@@ -30,10 +30,10 @@ namespace XLabs.Contacts.Droid
                 return new GenericQueryReader<Email>(translator, content, resources, ContactHelper.GetEmail);
             else if (translator.ReturnType == typeof(Address))
                 return new GenericQueryReader<Address>(translator, content, resources, ContactHelper.GetAddress);
-            //TODO implement platform specific items
-            /*else if (translator.ReturnType == typeof(Relationship))
+            else if (translator.ReturnType == typeof(Relationship))
                 return new GenericQueryReader<Relationship>(translator, content, resources, ContactHelper.GetRelationship);
-            else if (translator.ReturnType == typeof(GroupMembership))
+            //TODO implement platform specific items
+            /*else if (translator.ReturnType == typeof(GroupMembership))
                 return new GenericQueryReader<GroupMembership>(translator, content, resources, ContactHelper.GetContactGroupMembership);
             else if (translator.ReturnType == typeof(InstantMessagingAccount))
                 return new GenericQueryReader<InstantMessagingAccount>(translator, content, resources, ContactHelper.GetImAccount);*/

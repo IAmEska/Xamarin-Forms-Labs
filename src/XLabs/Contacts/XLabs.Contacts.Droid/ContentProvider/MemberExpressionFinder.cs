@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using XLabs.ContentProvider;
 
 namespace XLabs.Droid.ContentProvider
 {
     internal class MemberExpressionFinder
-        : ExpressionVisitor
+        : XLabs.ContentProvider.ExpressionVisitor
     {
         internal MemberExpressionFinder(ITableFinder tableFinder)
         {

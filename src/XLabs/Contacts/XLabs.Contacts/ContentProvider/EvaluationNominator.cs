@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace XLabs.Droid.ContentProvider
+namespace XLabs.ContentProvider
 {
-    internal class EvaluationNominator: ExpressionVisitor
+    public class EvaluationNominator: ExpressionVisitor
     {
         internal EvaluationNominator(Func<Expression, bool> predicate)
         {

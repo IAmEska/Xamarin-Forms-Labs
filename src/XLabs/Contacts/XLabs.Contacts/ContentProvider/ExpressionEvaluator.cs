@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace XLabs.Droid.ContentProvider
+namespace XLabs.ContentProvider
 {
-    internal static class ExpressionEvaluator
+    public static class ExpressionEvaluator
     {
         public static Expression Evaluate(Expression expression, Func<Expression, bool> predicate)
         {

@@ -4,10 +4,11 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using Android.Provider;
+using XLabs.ContentProvider;
 
 namespace XLabs.Droid.ContentProvider
 {
-    internal class ContentQueryTranslator: ExpressionVisitor
+    internal class ContentQueryTranslator: XLabs.ContentProvider.ExpressionVisitor
     {
         public ContentQueryTranslator(IQueryProvider provider, ITableFinder tableFinder)
         {
@@ -204,7 +205,7 @@ namespace XLabs.Droid.ContentProvider
         }
 
         private class WhereEvaluator
-            : ExpressionVisitor
+            : XLabs.ContentProvider.ExpressionVisitor
         {
             public WhereEvaluator(ITableFinder tableFinder, Android.Net.Uri existingTable)
             {

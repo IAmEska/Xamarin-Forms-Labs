@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace XLabs.Contacts.Droid
+namespace XLabs.Contacts
 {
     public enum RelationshipType
     {

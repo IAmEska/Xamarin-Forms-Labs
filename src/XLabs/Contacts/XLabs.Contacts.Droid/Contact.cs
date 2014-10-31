@@ -43,20 +43,6 @@ namespace XLabs.Contacts.Droid
             }
         }
 
-        internal List<Relationship> relationships = new List<Relationship>();
-
-        public IEnumerable<Relationship> Relationships
-        {
-            get
-            {
-                return relationships;
-            }
-            set
-            {
-                relationships = new List<Relationship>(value);
-            }
-        }
-
         #endregion
 
         #region implemented interface properties
@@ -172,6 +158,20 @@ namespace XLabs.Contacts.Droid
             set
             {
                 addresses = new List<Address>(value);
+            }
+        }
+
+        internal List<Relationship> relationships = new List<Relationship>();
+
+        public IEnumerable<Relationship> Relationships
+        {
+            get
+            {
+                return relationships;
+            }
+            set
+            {
+                relationships = new List<Relationship>(value);
             }
         }
 

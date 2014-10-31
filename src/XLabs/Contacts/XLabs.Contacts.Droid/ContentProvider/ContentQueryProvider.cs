@@ -6,6 +6,7 @@ using System.Linq.Expressions;
 using Android.Content;
 using Android.Content.Res;
 using Android.Database;
+using XLabs.ContentProvider;
 
 namespace XLabs.Droid.ContentProvider
 {
