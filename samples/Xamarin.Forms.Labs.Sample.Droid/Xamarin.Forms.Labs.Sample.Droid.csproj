@@ -154,11 +154,11 @@
       <Project>{67BB1B0A-8F35-4B87-907A-0BCA3103B38B}</Project>
       <Name>Xamarin.Forms.Labs.Droid</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\src\Xamarin.Forms.Labs\XLabs.Contacts\XLabs.Contacts.Droid\XLabs.Contacts.Droid.csproj">
+    <ProjectReference Include="..\..\src\XLabs\Contacts\XLabs.Contacts.Droid\XLabs.Contacts.Droid.csproj">
       <Project>{11DE7A3B-6A7A-46E9-BAE2-4EC95BEB760C}</Project>
       <Name>XLabs.Contacts.Droid</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\src\Xamarin.Forms.Labs\XLabs.Contacts\XLabs.Contacts.csproj">
+    <ProjectReference Include="..\..\src\XLabs\Contacts\XLabs.Contacts\XLabs.Contacts.csproj">
       <Project>{A53F18F9-4165-42DB-A1FD-B2C981957A27}</Project>
       <Name>XLabs.Contacts</Name>
     </ProjectReference>
