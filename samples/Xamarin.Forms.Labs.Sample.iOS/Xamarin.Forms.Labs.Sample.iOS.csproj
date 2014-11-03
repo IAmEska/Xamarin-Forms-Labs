@@ -24,9 +24,7 @@
     <ConsolePause>false</ConsolePause>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchDebug>True</MtouchDebug>
-    <MtouchExtraArgs>
-    </MtouchExtraArgs>
-    <MtouchArch>ARMv7</MtouchArch>
+    <MtouchArch>i386</MtouchArch>
     <MtouchUseSGen>True</MtouchUseSGen>
     <MtouchOptimizePNGs>True</MtouchOptimizePNGs>
     <MtouchI18n>
@@ -63,12 +61,12 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchDebug>True</MtouchDebug>
     <CodesignKey>iPhone Developer</CodesignKey>
-    <MtouchExtraArgs>
-    </MtouchExtraArgs>
     <MtouchArch>ARMv7</MtouchArch>
     <MtouchOptimizePNGs>True</MtouchOptimizePNGs>
     <MtouchI18n>
     </MtouchI18n>
+    <IpaPackageName>
+    </IpaPackageName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>full</DebugType>
@@ -211,6 +209,14 @@
     <ProjectReference Include="..\..\src\Xamarin.Forms.Labs\Xamarin.Forms.Labs.iOS\Xamarin.Forms.Labs.iOS.csproj">
       <Project>{31ACBE7A-3A07-46A5-804D-0C70454B3DC9}</Project>
       <Name>Xamarin.Forms.Labs.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\XLabs\Contacts\XLabs.Contacts.iOS.Classic\XLabs.Contacts.iOS.Classic.csproj">
+      <Project>{2A4C7C4A-3D00-4AF2-A5BA-83A3547F2BFD}</Project>
+      <Name>XLabs.Contacts.iOS.Classic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\XLabs\Contacts\XLabs.Contacts\XLabs.Contacts.csproj">
+      <Project>{A53F18F9-4165-42DB-A1FD-B2C981957A27}</Project>
+      <Name>XLabs.Contacts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

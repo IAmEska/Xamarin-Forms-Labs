@@ -50,6 +50,8 @@ namespace Xamarin.Forms.Labs.Sample.iOS
 
             new CalendarViewRenderer(); //added so the assembly is included
 
+            new XLabs.Contacts.iOS.AddressBook(); // added so the assembly is included
+
             Forms.Init();
 
             App.Init();
@@ -82,12 +84,12 @@ namespace Xamarin.Forms.Labs.Sample.iOS
             resolverContainer.Register<IDevice>(t => AppleDevice.CurrentDevice)
                 .Register<IDisplay>(t => t.Resolve<IDevice>().Display)
                 .Register<IJsonSerializer, XLabs.Serialization.ServiceStack.JsonSerializer>()
-                //.Register<IJsonSerializer, Services.Serialization.SystemJsonSerializer>()
+            //.Register<IJsonSerializer, Services.Serialization.SystemJsonSerializer>()
                 .Register<IXFormsApp>(app)
                 .Register<IDependencyContainer>(t => resolverContainer)
                 .Register<ISimpleCache>(
-                    t => new SQLiteSimpleCache(new SQLite.Net.Platform.XamarinIOS.SQLitePlatformIOS(),
-                        new SQLite.Net.SQLiteConnectionString(pathToDatabase, true), t.Resolve<IJsonSerializer>()));
+                t => new SQLiteSimpleCache(new SQLite.Net.Platform.XamarinIOS.SQLitePlatformIOS(),
+                    new SQLite.Net.SQLiteConnectionString(pathToDatabase, true), t.Resolve<IJsonSerializer>()));
             
             Resolver.SetResolver(resolverContainer.GetResolver());
         }

@@ -36,7 +36,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XLabs.Platform\XLabs.Platform.csproj">
-      <Project>{2a4d9dd4-326c-4824-aa3c-a9ed45cc898c}</Project>
+      <Project>{2A4D9DD4-326C-4824-AA3C-A9ED45CC898C}</Project>
       <Name>XLabs.Platform</Name>
     </ProjectReference>
   </ItemGroup>
