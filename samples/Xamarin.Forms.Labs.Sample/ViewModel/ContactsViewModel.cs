@@ -19,11 +19,14 @@ namespace Xamarin.Forms.Labs.Sample
         {
             contacts = new ObservableCollection<ContactListModel>();
             var book = DependencyService.Get<XLabs.Contacts.IAddressBook>();
-            foreach (XLabs.Contacts.IContact contact in book)
+            await book.RequestPermission();
+            foreach (XLabs.Contacts.IContact contact in book.OrderBy(x => x.LastName))
             {
                 XLabs.Contacts.Phone phone = contact.Phones.FirstOrDefault();
+                XLabs.Contacts.Email email = contact.Emails.FirstOrDefault();
                 string number = phone != null ? phone.Number : String.Empty;
-                contacts.Add(new ContactListModel(){ DisplayName = contact.DisplayName, Number = number, Thumbnail = await contact.GetThumbnailAsync() });
+                string emailAddress = email != null ? email.Address : String.Empty;
+                contacts.Add(new ContactListModel(){ DisplayName = contact.DisplayName, Number = number, Email = emailAddress, Thumbnail = await contact.GetThumbnailAsync() });
             }
         }
 
@@ -50,6 +53,7 @@ namespace Xamarin.Forms.Labs.Sample
 
             private string displayName;
             private string number;
+            private string email;
             private ImageSource thumbnail;
 
             public string DisplayName
@@ -64,6 +68,30 @@ namespace Xamarin.Forms.Labs.Sample
                     {
                         displayName = value;
                         OnPropertyChanged("DisplayName");
+                    }
+                }
+            }
+
+            public string ContactInfo
+            {
+                get
+                {
+                    return string.Format("{0} {1}", Number, Email);
+                }
+            }
+
+            public string Email
+            {
+                get
+                {
+                    return email;
+                }
+                set
+                {
+                    if (email != value)
+                    {
+                        email = value;
+                        OnPropertyChanged("Email");
                     }
                 }
             }
