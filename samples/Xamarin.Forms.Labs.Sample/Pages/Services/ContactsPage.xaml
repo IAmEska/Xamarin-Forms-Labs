@@ -4,7 +4,7 @@
 		<ListView ItemsSource="{Binding Contacts}">
 			<ListView.ItemTemplate>
 				<DataTemplate>
-					<ImageCell ImageSource="{Binding Thumbnail}" Text="{Binding DisplayName}" Detail="{Binding Number}"  />
+					<ImageCell ImageSource="{Binding Thumbnail}" Text="{Binding DisplayName}" Detail="{Binding ContactInfo}"  />
 				</DataTemplate>
 			</ListView.ItemTemplate>
 		</ListView>
